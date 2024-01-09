@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juca <juca@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/09 13:43:48 by juca              #+#    #+#             */
-/*   Updated: 2024/01/09 13:58:55 by juca             ###   ########.fr       */
+/*   Created: 2024/01/09 14:30:33 by juca              #+#    #+#             */
+/*   Updated: 2024/01/09 14:38:00 by juca             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isdigit(int c)
+int ft_isascii(int c)
 {
-	if(c >= '0' && c <= '9')
+	if(c >= 0 && c <= 127)
 	{
-		return (1);
+		return(1);
 	}
 	return(0);
 }
 #include <stdio.h>
-int main(void)
+int main (void)
 {
-	int kiki = '7';
-	printf("%d", ft_isdigit(kiki));
+	int g = 128;
+	printf("%d", ft_isascii(g));
 }
