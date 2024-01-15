@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nacontre <nacontre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/15 12:12:52 by nacontre          #+#    #+#             */
-/*   Updated: 2024/01/15 12:12:57 by nacontre         ###   ########.fr       */
+/*   Created: 2024/01/15 12:34:54 by nacontre          #+#    #+#             */
+/*   Updated: 2024/01/15 13:29:36 by nacontre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isprint(int c)
+int ft_toupper(int c)
 {
-	if(c >= 32 && c <= 126)
-	{
-		return(1);
-	}
-	return(0);
-}
-#include <stdio.h>
- int main(void)
-{
-	int k = 1;
-	printf("%d", ft_isprint(k));
+    if(c >= 97 && c <= 122)
+    {
+        c = c - 32;
+    }
+    return(c);
 }
