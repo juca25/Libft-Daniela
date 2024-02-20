@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_snmp.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nacontre <nacontre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/15 13:53:45 by nacontre          #+#    #+#             */
-/*   Updated: 2024/01/15 13:53:45 by nacontre         ###   ########.fr       */
+/*   Created: 2024/01/19 14:59:01 by nacontre          #+#    #+#             */
+/*   Updated: 2024/01/24 13:58:16 by nacontre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_strncmp(char *s1, char *s2, int n)
+#include <stdlib.h>
+
+void ft_bzero( void *s, size_t n)
 {
-    int i;
-    i = 0;
-    while(s1[i] != 0 && s2[i] != 0 && i < n)
-    {
-         if(s1[i] != s2[i])
-         {
-            return(s1[i] - s2[i]);
-         }
-        i++;
-    }
-    return (0);
+    ft_memset(s, 0, n);
 }

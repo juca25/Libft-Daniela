@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_snmp.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nacontre <nacontre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/15 13:53:45 by nacontre          #+#    #+#             */
-/*   Updated: 2024/01/15 13:53:45 by nacontre         ###   ########.fr       */
+/*   Created: 2024/02/01 14:20:55 by nacontre          #+#    #+#             */
+/*   Updated: 2024/02/01 14:35:15 by nacontre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_strncmp(char *s1, char *s2, int n)
+char *ft_strrchr(const char *s, int c)
 {
     int i;
     i = 0;
-    while(s1[i] != 0 && s2[i] != 0 && i < n)
+    while(s[i] != '\0')
     {
-         if(s1[i] != s2[i])
-         {
-            return(s1[i] - s2[i]);
-         }
         i++;
     }
-    return (0);
+    while(i >= 0)
+    {
+        if (s[i] == c)
+            return((char *)s + i);
+        i--;
+    }
+    return(NULL);
 }

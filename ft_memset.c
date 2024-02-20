@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_snmp.c                                        :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nacontre <nacontre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/15 13:53:45 by nacontre          #+#    #+#             */
-/*   Updated: 2024/01/15 13:53:45 by nacontre         ###   ########.fr       */
+/*   Created: 2024/01/19 12:25:39 by nacontre          #+#    #+#             */
+/*   Updated: 2024/01/19 15:14:22 by nacontre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_strncmp(char *s1, char *s2, int n)
+#include <stdio.h>
+#include <stdlib.h>
+void *ft_memset(void *s, int c, size_t n)
 {
-    int i;
+    char *str;
+    unsigned int i;
+
+    str = s;
     i = 0;
-    while(s1[i] != 0 && s2[i] != 0 && i < n)
+    while (i < n)
     {
-         if(s1[i] != s2[i])
-         {
-            return(s1[i] - s2[i]);
-         }
+        str[i] = c;
         i++;
     }
-    return (0);
+    return (s);
 }

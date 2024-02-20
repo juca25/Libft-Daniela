@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_snmp.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nacontre <nacontre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/15 13:53:45 by nacontre          #+#    #+#             */
-/*   Updated: 2024/01/15 13:53:45 by nacontre         ###   ########.fr       */
+/*   Created: 2024/02/01 14:32:21 by nacontre          #+#    #+#             */
+/*   Updated: 2024/02/01 15:30:28 by nacontre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_strncmp(char *s1, char *s2, int n)
+int ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-    int i;
+    size_t i;
     i = 0;
-    while(s1[i] != 0 && s2[i] != 0 && i < n)
+    while(s1[i] != '\0' && s2[i] != '\0' && i < n)
     {
-         if(s1[i] != s2[i])
-         {
+        if (s1[i] != s2[i])
             return(s1[i] - s2[i]);
-         }
         i++;
     }
-    return (0);
+    if (i == n)
+        return(0);
+    return(s1[i] - s2[i]);
 }

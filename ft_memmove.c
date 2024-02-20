@@ -1,26 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_snmp.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nacontre <nacontre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/15 13:53:45 by nacontre          #+#    #+#             */
-/*   Updated: 2024/01/15 13:53:45 by nacontre         ###   ########.fr       */
+/*   Created: 2024/01/24 12:59:55 by nacontre          #+#    #+#             */
+/*   Updated: 2024/02/01 15:50:48 by nacontre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_strncmp(char *s1, char *s2, int n)
+#include <stddef.h>
+
+void *ft_memmove(void *dest, const void *src, size_t n)
 {
-    int i;
+    size_t i;
     i = 0;
-    while(s1[i] != 0 && s2[i] != 0 && i < n)
+    char *d;
+    char *s;
+    d = (char *)dest;
+    s = (char *)src;
+    if (d < s)
     {
-         if(s1[i] != s2[i])
-         {
-            return(s1[i] - s2[i]);
-         }
-        i++;
+        while (i < n)
+        {
+            d[i] = s[i];
+            i++;
+        }
     }
-    return (0);
+    else
+    {
+        while (n > 0)
+        {
+            d[n - 1] = s[n - 1];
+            n--;
+        }
+    }
+    return (dest);
 }

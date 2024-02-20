@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_snmp.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nacontre <nacontre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/15 13:53:45 by nacontre          #+#    #+#             */
-/*   Updated: 2024/01/15 13:53:45 by nacontre         ###   ########.fr       */
+/*   Created: 2024/01/30 20:47:34 by nacontre          #+#    #+#             */
+/*   Updated: 2024/01/30 21:13:48 by nacontre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_strncmp(char *s1, char *s2, int n)
+#include <stdio.h>
+#include <stddef.h>
+
+int ft_strlcat(char *dst, const char *src, size_t size)
 {
-    int i;
+    size_t i;
+    size_t j;
     i = 0;
-    while(s1[i] != 0 && s2[i] != 0 && i < n)
+    j = 0;
+    while(dst[i] != '\0')
     {
-         if(s1[i] != s2[i])
-         {
-            return(s1[i] - s2[i]);
-         }
         i++;
     }
-    return (0);
+    while(src[j] != '\0' && j < size)
+    {
+        dst[i] = src[j];
+        i++;
+        j++;
+    }
+    dst[i] = '\0';
+    return(i);
 }

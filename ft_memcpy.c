@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_snmp.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nacontre <nacontre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/15 13:53:45 by nacontre          #+#    #+#             */
-/*   Updated: 2024/01/15 13:53:45 by nacontre         ###   ########.fr       */
+/*   Created: 2024/01/24 11:23:07 by nacontre          #+#    #+#             */
+/*   Updated: 2024/01/24 13:50:32 by nacontre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_strncmp(char *s1, char *s2, int n)
+#include <string.h>
+
+void *ft_memcpy(void *dest, const void *src, size_t n)
 {
-    int i;
-    i = 0;
-    while(s1[i] != 0 && s2[i] != 0 && i < n)
+    unsigned char *new_dest; 
+    const unsigned char *new_src; 
+
+    new_dest = (unsigned char *)dest;
+    new_src = (const unsigned char *)src;
+    while (n > 0)
     {
-         if(s1[i] != s2[i])
-         {
-            return(s1[i] - s2[i]);
-         }
-        i++;
+        *new_dest = *new_src;
+        new_dest++;
+        new_src++;
+        n--;
     }
-    return (0);
+    return (dest);
 }
